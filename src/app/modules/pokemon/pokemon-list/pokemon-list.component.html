@@ -1,0 +1,19 @@
+<div class="custom-container"
+     (scroll)="onScroll($event)">
+  <br>
+  <div class="search-container">
+    <mat-form-field appearance="outline">
+      <mat-label>Search</mat-label>
+      <input matInput
+             [formControl]="control"
+             placeholder="Pokemon name or type">
+      <mat-icon matSuffix>search</mat-icon>
+    </mat-form-field>
+  </div>
+  <div class="list-container">
+    <ng-container *ngFor="let pokemon of pokemonList$ | async; trackBy: trackyFn">
+      <app-pokemon-card (click)="selectPokemon(pokemon)" [pokemon]="pokemon"></app-pokemon-card>
+    </ng-container>
+  </div>
+
+</div>

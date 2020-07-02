@@ -1,0 +1,77 @@
+<div class="custom-container center-flex">
+   <div class="img-container">
+      <img src="/assets/images/wallpaper.jpeg">
+   </div>
+
+   <form class="center-flex"
+         [formGroup]="signUpForm">
+      <mat-form-field appearance="outline">
+         <mat-label>Full name</mat-label>
+         <input matInput
+                formControlName="name"
+                placeholder="Type your name here">
+         <mat-error *ngIf="formControls.name.touched"
+                    color="danger">
+            <p class="ion-padding-start"
+               *ngIf="formControls.name.errors?.required">Name is required</p>
+         </mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+         <mat-label>Email</mat-label>
+         <input matInput
+                formControlName="email"
+                placeholder="Type your Email here">
+         <mat-error *ngIf="formControls.email.touched"
+                    color="danger">
+            <p class="ion-padding-start"
+               *ngIf="formControls.email.errors?.required">Email is required</p>
+            <p class="ion-padding-start"
+               *ngIf="formControls.email.errors?.email">It´s not a valid email</p>
+         </mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+         <mat-label>Password</mat-label>
+         <input matInput
+                formControlName="password"
+                type="password"
+                placeholder="Type your Password here">
+         <mat-error *ngIf="formControls.password.touched"
+                    color="danger">
+            <p class="ion-padding-start"
+               *ngIf="formControls.password.errors?.required">Password is required</p>
+            <p class="ion-padding-start"
+               *ngIf="formControls.password.errors?.minlength">Min 8 characters</p>
+            <p class="ion-padding-start"
+               *ngIf="formControls.password.errors?.capitalquantity">Min 2 capital letters</p>
+            <p class="ion-padding-start"
+               *ngIf="formControls.password.errors?.specialcharacter">Min 1 special character</p>
+            <p class="ion-padding-start"
+               *ngIf="formControls.password.errors?.minnumberquantity">Min 1 number</p>
+         </mat-error>
+      </mat-form-field>
+      <br>
+      <mat-form-field appearance="outline">
+         <mat-label>Confirm Password</mat-label>
+         <input matInput
+                type="password"
+                formControlName="confirmPassword"
+                placeholder="Type your Password here">
+
+      </mat-form-field>
+      <mat-error passwordsMatch
+                 color="danger">
+         <p class="ion-padding-start"
+            *ngIf="!passwordsMatch">Passwords don't match</p>
+      </mat-error>
+      <br>
+      <button mat-raised-button
+              [disabled]="!signUpForm.valid"
+              color="primary"
+              (click)="submitForm()">{{isUpdating ? 'Update':'Register'}}</button>
+      <br>
+      <button mat-raised-button
+              color="accent"
+              (click)="goBack()">Cancel</button>
+   </form>
+
+</div>

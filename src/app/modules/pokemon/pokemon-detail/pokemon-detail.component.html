@@ -1,0 +1,53 @@
+<div class="custom-container"
+     *ngIf="( pokemonCustomDetail$ | async ) as pokemonDetail">
+  <br>
+  <div class="header">
+    <h1>Pokemon Detail</h1>
+    <span class="material-icons center-flex"
+          (click)="goBack()">
+      close
+    </span>
+  </div>
+
+  <br>
+  <div class="detail container">
+    <div class="spinner-container"
+         *ngIf="!pokemonDetail.detail">
+      <mat-spinner></mat-spinner>
+    </div>
+    <div class="section-1">
+      <div class="img-container">
+        <img class="image"
+             [src]="pokemonDetail.detail?.sprites?.front_default"
+             alt="">
+      </div>
+      <br>
+      <h2>Name</h2>
+      <p>{{pokemonDetail.detail?.name}}</p>
+      <h2>Id</h2>
+      <p>{{pokemonDetail.detail?.id}}</p>
+      <h2>Type</h2>
+      <p *ngFor="let type of pokemonDetail.detail?.types">{{type.type.name}}</p>
+      <h2>Height</h2>
+      <p>{{pokemonDetail.detail?.height}}</p>
+      <h2>Weight</h2>
+      <p>{{pokemonDetail.detail?.weight}}</p>
+    </div>
+    <div class="section-2">
+      <h1>Evolutions</h1>
+      <div class="list-container">
+        <ng-container *ngFor="let pokemon of pokemonEvolutions">
+          <app-pokemon-card (click)="selectPokemon(pokemon)"
+                            [pokemon]="pokemon">
+          </app-pokemon-card>
+        </ng-container>
+      </div>
+      <br>
+      <h1>Moves</h1>
+      <div class="list-container">
+        <span class="chip"
+              *ngFor="let move of pokemonDetail.detail?.moves">{{move.move.name}}</span>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,14 @@
+.list-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.search-container {
+  text-align: center;
+}
+
+mat-form-field {
+  width: 300px;
+}

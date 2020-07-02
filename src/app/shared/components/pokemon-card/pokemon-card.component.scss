@@ -1,0 +1,64 @@
+.card {
+  width: 250px;
+  margin: 10px;
+  cursor: pointer;
+  position: relative;
+  height: 280px;
+  background-color: black;
+  color: white;
+ 
+  padding: 20px 10px;
+  background: linear-gradient(
+    to bottom,
+    rgba(50, 112, 245, 1) 0%,
+    rgba(119, 14, 185, 1) 100%
+  );
+  box-shadow: 3px 3px 11px -2px rgba(0, 0, 0, 0.62);
+  border-radius: 10px;
+
+  .title {
+    font-family: "Bebas Neue", cursive;
+    font-size: 2rem;
+  }
+
+  .types {
+    margin-top: 10px;
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.card:hover{
+  background: linear-gradient(
+    to bottom,
+    rgb(239, 255, 8) 0%,
+    rgb(250, 92, 0) 100%
+  );
+}
+
+.chip {
+  background-color: white;
+  color: rgba(119, 14, 185, 1);
+  font-size: 0.9rem;
+  padding: 9px;
+  margin: 7px;
+  font-family: "Nunito", sans-serif;
+  border-radius: 30px;
+  box-shadow: 3px 3px 7px 0px rgba(0, 0, 0, 0.353);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ad4bad', endColorstr='#d45b5b', GradientType=1 );
+}
+
+.img-container {
+  width: 160px;
+  height: 160px;
+  img {
+    width: 100%;
+    filter: drop-shadow(5px 4px 5px rgba(0, 0, 0, 0.47));
+  }
+  /* position: absolute; */
+}

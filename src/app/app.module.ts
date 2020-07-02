@@ -1,16 +1,33 @@
+import { CoreModule } from './core/core.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { StoreModule } from '@ngrx/store';
 import { AppComponent } from './app.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AppRoutingModule } from './app-routing.module';
+import { environment } from '@environments/environment';
+import { EffectsModule } from '@ngrx/effects';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    BrowserModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+   declarations: [
+      AppComponent,
+   ],
+   imports: [
+      CoreModule,
+      BrowserModule,
+      BrowserAnimationsModule,
+      AppRoutingModule,
+      StoreModule.forRoot({}),
+      EffectsModule.forRoot([]),
+      StoreDevtoolsModule.instrument({
+         maxAge: 25, // Retains last 25 states
+         logOnly: environment.production, // Restrict extension to log-only mode
+      }),
+   ],
+   providers: [],
+   bootstrap: [
+      AppComponent
+   ]
 })
 export class AppModule { }

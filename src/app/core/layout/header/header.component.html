@@ -1,0 +1,26 @@
+<div class="header-container" >
+  <div class="icon">
+    <img src="/assets/images/logopokemon.png"
+         alt="">
+  </div>
+  <div class="nav-options" *ngIf="(isLogged$ | async)?.email">
+    <div class="option" (click)="goToPokemons()">
+      <span class="material-icons">
+        list
+      </span>
+      <span>Pokemons</span>
+    </div>
+    <div class="option" (click)="goToProfile()">
+      <span class="material-icons">
+        person
+      </span>
+      <span>Profile</span>
+    </div>
+    <div class="option" (click)="goToLogin()">
+      <span class="material-icons">
+        exit_to_app
+      </span>
+      <span>Logout</span>
+    </div>
+  </div>
+</div>

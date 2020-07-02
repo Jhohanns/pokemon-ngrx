@@ -1,1 +1,51 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito:wght@700&display=swap');
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; overflow: hidden;}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito', sans-serif;
+    &,
+    &:before,
+    &:after {
+      box-sizing: border-box;
+      padding: 0;
+      margin: 0;
+    }
+  }
+
+  .custom-container{
+    overflow-y: auto;
+    height: calc(100vh - 60px);
+    padding: 0 35px 35px 35px;
+    position: relative;
+    background-color: #e4e5f2;
+  }
+
+  .center-flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  // Apply display block to new HTML5 elements
+  article,
+  aside,
+  details,
+  figcaption,
+  figure,
+  footer,
+  header,
+  hgroup,
+  main,
+  nav,
+  section,
+  summary,
+  audio,
+  canvas,
+  video {
+    display: block;
+  }

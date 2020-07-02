@@ -1,0 +1,37 @@
+<div class="custom-container center-flex">
+  <div class="img-container">
+    <img src="/assets/images/wallpaper.jpeg">
+  </div>
+  <span class="creator center-flex">
+    Creator: Jhohanns villa vasquez <a href="https://www.linkedin.com/in/jhohanns-villa/">
+      <img src="/assets/images/linkedin.png">
+    </a>
+  </span>
+  <form [formGroup]="loginForm"
+        class="center-flex">
+    <mat-form-field appearance="outline">
+      <mat-label>Email</mat-label>
+      <input matInput
+             formControlName="email"
+             type="email"
+             placeholder="Type your email here">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Password</mat-label>
+      <input matInput
+             formControlName="password"
+             type="password"
+             placeholder="Type your password here">
+    </mat-form-field>
+    <br>
+    <button mat-raised-button
+            color="primary"
+            (click)="login()">Login</button>
+    <br>
+    <p>don't have an account?</p>
+    <button mat-raised-button
+            color="secondary"
+            (click)="goToRegister()">Register</button>
+  </form>
+
+</div>
