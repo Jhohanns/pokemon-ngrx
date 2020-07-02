@@ -55,7 +55,6 @@ export class RegisterUpdateComponent implements OnInit, OnDestroy {
       select(fromAuthState.getCurrentLoggedUser),
       take(1)
     ).subscribe((response: IUser) => {
-      console.log('aqui esta', response);
       if (response && response.email) {
         this.isUpdating = true;
         this.setCurrentUserInfo(response);

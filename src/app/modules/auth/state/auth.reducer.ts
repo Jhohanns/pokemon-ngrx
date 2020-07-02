@@ -18,7 +18,6 @@ const scoreboardReducer = createReducer(
     initialState,
     on(loginAction, (state, { user }) => {
         {
-            console.log('estoy en el reducer');
             const exist = state.registeredUsers.find(
                 userRegistered => userRegistered.email === user.email && userRegistered.password === user.password
             );
@@ -30,7 +29,6 @@ const scoreboardReducer = createReducer(
     }),
     on(updateAction, (state, { user }) => {
         {
-            console.log('estoy en el reducer update', user);
             const array: IUser[] = [...state.registeredUsers];
             const userProfile: IUser = { email: user.email, password: user.password, name: user.name };
 

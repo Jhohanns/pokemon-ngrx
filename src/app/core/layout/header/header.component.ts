@@ -14,7 +14,7 @@ export class HeaderComponent implements OnInit {
   isLogged$: Observable<any>;
 
   constructor(private router: Router, private store: Store<fromAuthState.State>) {
-    this.isLogged$ = this.store.pipe(select(fromAuthState.getCurrentLoggedUser), tap(x => console.log('ssssupdta', x)));
+    this.isLogged$ = this.store.pipe(select(fromAuthState.getCurrentLoggedUser));
 
   }
 
