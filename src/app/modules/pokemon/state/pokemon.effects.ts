@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { PokemonService } from '@services/pokemon/pokemon.service';
 import { EMPTY } from 'rxjs';
-import { catchError, flatMap, map, switchMap, tap } from 'rxjs/operators';
+import { catchError, flatMap, map, switchMap, tap, take } from 'rxjs/operators';
 import { PokemonActionTypes } from './pokemon.actions';
 
 
@@ -19,7 +19,8 @@ export class PokemonEffects {
           this.searchPokemonFirstTime = true;
           return this.pokemonService.getPokemons(this.searchPokemonCurrentPage).pipe(
             map((res) => ({ type: PokemonActionTypes.SearchResponse, pokemonsResponse: res })),
-            tap(() => this.searchPokemonCurrentPage++)
+            tap(() => this.searchPokemonCurrentPage++),
+            take(1)
           );
         }
         return EMPTY;

@@ -1,11 +1,12 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
-import { IPokemonDetail } from '@interfaces/pokemon.interface';
 import { select, Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { debounceTime, map, tap } from 'rxjs/operators';
 import * as fromPokemonState from '../state';
+
+import { IPokemonDetail } from '@interfaces/pokemon.interface';
 
 @Component({
   selector: 'app-pokemon-list',

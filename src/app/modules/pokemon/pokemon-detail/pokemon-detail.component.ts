@@ -1,10 +1,11 @@
-import { IPokemonDetail } from '@interfaces/pokemon.interface';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import * as fromPokemonState from '../state';
 import { select, Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { tap, map } from 'rxjs/operators';
-import * as fromPokemonState from '../state';
-import { Router } from '@angular/router';
+import { map, tap } from 'rxjs/operators';
+
+import { IPokemonDetail } from '@interfaces/pokemon.interface';
 
 @Component({
   selector: 'app-pokemon-detail',

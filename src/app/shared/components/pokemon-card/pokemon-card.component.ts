@@ -1,5 +1,6 @@
+import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
+
 import { IPokemonDetail } from '@interfaces/pokemon.interface';
-import { Component, OnInit, Input, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
   selector: 'app-pokemon-card',

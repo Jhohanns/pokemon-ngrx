@@ -20,7 +20,11 @@ export class PokemonService {
       flatMap((response: IPokemon) => {
         const calls = new Array(response.results.length).fill({}).map((x, index) => {
           const pokemonID = response.results[index].url.split('/').reverse()[1];
-          return this.getPokemon(pokemonID);
+          return this.getPokemon(pokemonID).pipe(map(pokemon =>
+            ({
+              id: pokemon.id, name: pokemon.name, types: pokemon.types,
+              moves: pokemon.moves, height: pokemon.height, weight: pokemon.weight, sprites: pokemon.sprites
+            })));
         });
 
         return forkJoin(calls).pipe(

@@ -2,15 +2,16 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material';
 import { Router } from '@angular/router';
-import { PROFILE } from '@constants';
-import { IUser } from '@interfaces/user.interface';
 import { select, Store } from '@ngrx/store';
-import { capitalCountValidator } from '@validators/capital-count.validator';
-import { numberCountValidator } from '@validators/number-count.validator';
-import { specialCharacterValidator } from '@validators/special-character.validator';
 import { Subscription } from 'rxjs';
 import { take } from 'rxjs/operators';
 import * as fromAuthState from '../state';
+
+import { PROFILE } from '@constants';
+import { IUser } from '@interfaces/user.interface';
+import { capitalCountValidator } from '@validators/capital-count.validator';
+import { numberCountValidator } from '@validators/number-count.validator';
+import { specialCharacterValidator } from '@validators/special-character.validator';
 
 @Component({
   selector: 'app-register-update',

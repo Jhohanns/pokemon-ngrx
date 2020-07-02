@@ -1,4 +1,3 @@
-import { IUser } from '@interfaces/user.interface';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material';
@@ -6,6 +5,8 @@ import { Router } from '@angular/router';
 import { select, Store } from '@ngrx/store';
 import { Subscription } from 'rxjs';
 import * as fromAuthState from '../state';
+
+import { IUser } from '@interfaces/user.interface';
 
 @Component({
   selector: 'app-login',
