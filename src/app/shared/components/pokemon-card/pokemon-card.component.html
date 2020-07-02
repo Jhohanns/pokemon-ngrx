@@ -4,7 +4,7 @@
          [src]="pokemon?.sprites.front_default"
          alt="">
   </div>
-  <span class="title">{{pokemon?.name}}</span>
+  <span class="title">{{pokemon?.name | titlecase}}</span>
 
   <div class="types">
     <span class="chip"
