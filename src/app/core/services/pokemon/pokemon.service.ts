@@ -15,7 +15,7 @@ export class PokemonService {
 
   constructor(private http: HttpClient) { }
 
-  getPokemons(page: number = 0, size: number = 30): Observable<any> {
+  getPokemons(page: number = 0, size: number = 50): Observable<any> {
     return this.http.get(`${this.baseUrl}pokemon?limit=${size}&offset=${(size * page)}`).pipe(
       flatMap((response: IPokemon) => {
         const calls = new Array(response.results.length).fill({}).map((x, index) => {
