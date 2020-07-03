@@ -23,7 +23,7 @@ export class PokemonService {
           return this.getPokemon(pokemonID).pipe(map(pokemon =>
             ({
               id: pokemon.id, name: pokemon.name, types: pokemon.types,
-              moves: pokemon.moves, height: pokemon.height, weight: pokemon.weight, sprites: pokemon.sprites
+              moves: pokemon.moves.map(move => move.move.name), height: pokemon.height, weight: pokemon.weight, sprites: pokemon.sprites
             })));
         });
 

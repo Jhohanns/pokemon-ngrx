@@ -23,6 +23,7 @@ export class PokemonDetailComponent implements OnInit {
     this.pokemonDetailObservable();
   }
 
+  // Observable to pokemon selected on NGRX state
   pokemonDetailObservable() {
     this.pokemonCustomDetail$ = this.store.pipe(
       select(fromPokemonState.getPokemonSelected),

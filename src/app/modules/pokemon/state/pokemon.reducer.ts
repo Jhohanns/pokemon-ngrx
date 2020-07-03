@@ -27,7 +27,7 @@ const scoreboardReducer = createReducer(
     on(searchResponseAction, (state, { pokemonsResponse }) =>
         ({
             ...state, pokemonList: state.pokemonList.length ?
-                state.pokemonList.concat(pokemonsResponse.pokemonList) :
+                [...state.pokemonList, ...pokemonsResponse.pokemonList] :
                 [...pokemonsResponse.pokemonList], totalPokemons: pokemonsResponse.totalPokemons
         })),
     on(searchTriggerAction, (state) =>
